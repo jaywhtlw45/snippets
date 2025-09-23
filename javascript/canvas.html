@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            canvas {
+                border: 2px solid black;
+                background-color: #f0f0f0;
+                display: block;
+                margin: 20px auto;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id="canvas" width="150" height="150"></canvas>
+        <canvas id="canvas2" width="150" height="150"></canvas>
+        <img src="testing.jpg" alt="">
+        
+        <script>
+            // const canvas = document.getElementById('canvas');
+           // const ctx = canvas.getContext('2d');
+            
+            // Draw a simple blue circle to make the canvas visible
+            // ctx.fillStyle = 'blue';
+            // ctx.beginPath();
+            // ctx.arc(75, 75, 50, 0, 2 * Math.PI);
+            // ctx.fill();
+            // 
+            // Add some text
+            // ctx.fillStyle = 'white';
+            // ctx.font = '16px Arial';
+            // ctx.textAlign = 'center';
+            // ctx.fillText('Canvas is working!', 75, 80);
+// 
+// 
+            // const canvas2 = document.getElementById('canvas2');
+            // ctx2 = canvas2.getContext("2d");
+            // ctx2.strokeStyle = ".78";
+            // ctx2.beginPath();           
+            // ctx2.moveTo(75, 50);
+            // ctx2.lineTo(100, 75);
+            // ctx2.lineTo(100, 25);
+            // ctx2.stroke();
+
+
+            // Second example
+            // const ctx = document.getElementById("canvas").getContext("2d");
+            // const img = new Image();
+            // 
+// 
+            // img.addEventListener("load", () => {
+                // const scale = Math.min(150/img.width, 150/img.height);
+                // const scaleWidth = img.width * scale;
+                // const scaleHeight = img.height * scale;
+// 
+            //    const x = (150-scaleWidth)/2;
+            //    const y = (150-scaleHeight)/2;
+// 
+// 
+            //    console.log(x,y);
+//  
+// 
+                // ctx.drawImage(img, x, y, scaleWidth, scaleHeight);
+// 
+            // })
+            // img.src = "./testing.jpg";
+
+
+            firstImage = document.images[0];
+            console.log(firstImage.src);
+            if (firstImage.src==="testing.jpg"){
+                console.log("found image");
+                console.log(firstImage);
+            }
+            
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!-- to run: python -m http.server 8000 -->
+<html>
+<head>
+    <title>Vue Counter Test</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+    
+    <script>
+    const { createApp } = Vue;
+    
+    const Counter = {
+        //state
+        data() {
+            return {
+                count: 0
+            }
+        },
+        // view
+        // backticks create a template literal in javascript which allow for multiline without use of other characters
+        // template object is what is displayed to the DOM
+        template: `
+            <div @click="increment">{{ count }}</div>
+        `,
+        // actions
+        methods: {
+            increment() {
+                this.count++
+            }
+        }
+    }
+
+    createApp(Counter).mount('#app')
+    </script>
+</body>
+</html>

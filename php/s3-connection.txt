@@ -1,0 +1,41 @@
+           
+// missing credentials
+try {
+                        file_put_contents('/home/ubuntu/errors/error.log', "[" . date('Y-m-d H:i:s') . "] Attempting S3 connection...\n", FILE_APPEND);
+
+                        $s3Client = new s3Client([
+                            'region'=>'us-west-1',
+                            'version'=>'2006-03-01', 
+                            'credentials' => [
+                                'key'    => $access_key,
+                                'secret' => $secret_access_key,
+                            ],
+                        ]);
+                        file_put_contents('/home/ubuntu/errors/error.log', "[" . date('Y-m-d H:i:s') . "] S3Client created successfully\n", FILE_APPEND);
+
+                        $s3BucketName = 'andiv1';
+
+                        $s3FileName = 'account_files/2/1-test.txt';
+                        $s3File =  $s3Client->getObject([
+                            'Bucket' => $s3BucketName,
+                            'Key' => $s3FileName,
+                        ]);
+
+                        $body = $s3File->get('Body');
+                        $body->rewind();
+                        
+                        file_put_contents('/home/ubuntu/errors/error.log', "Successfully retrieved bucket name\n" . "Downloaded the file and it begins with: {$body->read(26)}.\n", FILE_APPEND);
+                        file_put_contents('/home/ubuntu/errors/error.log', "Successfully retrieved bucket name\n", FILE_APPEND);
+
+                    }  catch (AwsException $e) {
+                        $errorMsg = "[" . date('Y-m-d H:i:s') . "] AWS Error: " . $e->getAwsErrorCode() . " - " . $e->getAwsErrorMessage() . "\n";
+                        $errorMsg .= "Request ID: " . $e->getAwsRequestId() . "\n";
+                        $errorMsg .= "HTTP Status: " . $e->getStatusCode() . "\n";
+                        file_put_contents('/home/ubuntu/errors/error.log', $errorMsg, FILE_APPEND);
+                        
+                    } catch (Exception $e) {
+                        $errorMsg = "[" . date('Y-m-d H:i:s') . "] General Error: " . $e->getMessage() . "\n";
+                        $errorMsg .= "File: " . $e->getFile() . " Line: " . $e->getLine() . "\n";
+                        $errorMsg .= "Stack trace:\n" . $e->getTraceAsString() . "\n";
+                        file_put_contents('/home/ubuntu/errors/error.log', $errorMsg, FILE_APPEND);
+                    }
