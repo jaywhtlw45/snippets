@@ -1,0 +1,42 @@
+.content {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+.slider-wrapper{
+    font-size: 32px;
+    color: blue;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* overflow: hidden; */
+    border: 5px solid red;
+}
+.slider{
+    height: 100%;
+    animation: slider2 5s linear infinite;
+}
+.slider-text {
+    background: chartreuse;
+    margin: 5px;
+    text-align: center;
+}
+
+@keyframes slider{
+    0% {margin-left: -50%}
+    25% {margin-left: 50%}
+    50% {margin-left: 50%}
+    75% {margin-left: 150%}
+    100% {margin-left: 150%}
+}
+
+@keyframes slider2{
+    0% { transform: translateX(-100%)}
+    10% { transform: translateX(0%)}
+    90% { transform: translateX(0%)}
+    100% { transform: translateX(100%)}
+}
