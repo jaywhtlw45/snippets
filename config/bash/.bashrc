@@ -8,6 +8,9 @@ ga(){
     git add "$@" 
 }
 
+# Change to home directory
+cd ~
+
 
 # If not running interactively, don't do anything
 case $- in
@@ -142,3 +145,6 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+
+
