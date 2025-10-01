@@ -7,6 +7,24 @@ alias ll="ls -la"
 ga(){ 
     git add "$@" 
 }
+gc(){
+    git commit -m "$@"
+}
+gp(){
+    git push "$@"
+}
+gs(){
+    git status "$@"
+}
+dcup(){
+    docker compose up "$@"
+}
+dcd(){
+    docker compose down "$@"
+}
+dps(){
+    docker ps "$@"
+}
 
 # Change to home directory
 cd ~
