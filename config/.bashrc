@@ -2,6 +2,10 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+# Aliases
+alias ll="ls -la"
+ga(){ git add "$@" }
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
