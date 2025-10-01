@@ -10,8 +10,11 @@ ga(){
 gc(){
     git commit -m "$@"
 }
-gp(){
+gpush(){
     git push "$@"
+}
+gpull(){
+    git pull "$@"
 }
 gs(){
     git status "$@"
