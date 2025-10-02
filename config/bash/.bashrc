@@ -6,9 +6,16 @@ set -o vi
 
 # Aliases
 alias ll="ls -la"
+
+# WSL
+wsll(){
+    wsl --list "$@"
+}
 wslsd(){
     wsl --set-default "$@"
 }
+
+# Git
 ga(){ 
     git add "$@" 
 }
@@ -24,6 +31,8 @@ gpull(){
 gs(){
     git status "$@"
 }
+
+# Docker
 dcup(){
     docker compose up "$@"
 }
