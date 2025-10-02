@@ -2,8 +2,13 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+set -o vi
+
 # Aliases
 alias ll="ls -la"
+wslsd(){
+    wsl --set-default "$@"
+}
 ga(){ 
     git add "$@" 
 }
