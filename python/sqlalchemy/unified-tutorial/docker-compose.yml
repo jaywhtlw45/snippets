@@ -1,0 +1,14 @@
+services:
+  db: 
+    image: postgres:18 
+    ports:
+      - 5555:5432
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: sqlalchemy-test
+      POSTGRES_USER: db-user
+
+
+    # "image" : "postgres:18"
+    # "ports" : ["5555":"5432"]
+    # "environment" : { "PASS":"password", "DB":"sqlalchemy", ...}
